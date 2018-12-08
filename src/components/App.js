@@ -30,10 +30,10 @@ export class App extends Component {
 
   locateMe() {
     const { dispatch } = this.props;
-
     if (navigator.geolocation) {
       this.setState({ ...this.state, clientLocating: true });
       navigator.geolocation.getCurrentPosition((position) => {
+        // console.log(locate(position.coords));
         dispatch(locate(position.coords));
       });
     }
